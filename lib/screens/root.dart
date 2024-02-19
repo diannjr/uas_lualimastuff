@@ -17,10 +17,10 @@ class _ProjectRootState extends State<ProjectRoot> {
   List screens = [
     const HomeScreen(),
     const LikesScreen(),
-    ProfileScreen(
-      sessionToken: '',
-    ),
+    ProfileScreen(sessionToken: '$sessionToken'),
   ];
+
+  static get sessionToken => null;
 
   @override
   Widget build(BuildContext context) {
@@ -89,5 +89,3 @@ class _ProjectRootState extends State<ProjectRoot> {
     );
   }
 }
-
-mixin state {}

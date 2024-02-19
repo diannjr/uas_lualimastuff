@@ -29,8 +29,8 @@ class _HomeScreenState extends State<HomeScreen> {
               color: Colors.grey[200],
               borderRadius: BorderRadius.circular(16),
             ),
-            child: Row(
-              children: const [
+            child: const Row(
+              children: [
                 SizedBox(width: 16),
                 Icon(Icons.search),
                 SizedBox(width: 16),

@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:lualimastuff_uas/screens/root.dart';
-import 'package:lualimastuff_uas/widget/login_load.dart';
 
 class ProfileScreen extends StatelessWidget {
   final String sessionToken;
@@ -12,7 +10,6 @@ class ProfileScreen extends StatelessWidget {
     return Scaffold(
       body: Stack(
         children: [
-          const ProjectRoot(),
           Container(
             height: double.infinity,
             width: double.infinity,
