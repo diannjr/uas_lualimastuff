@@ -4,6 +4,7 @@ import 'package:lualimastuff_uas/providers/favorite.dart';
 import 'package:lualimastuff_uas/repository/login_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:lualimastuff_uas/screens/welcome.dart';
 import 'package:lualimastuff_uas/widget/login_load.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:provider/provider.dart';
@@ -43,7 +44,7 @@ class MyApp extends StatelessWidget {
             theme: ThemeData(
               primarySwatch: Colors.blue,
             ),
-            home: HomePage(),
+            home: const WelcomeScreen(),
           ),
         ),
       ),

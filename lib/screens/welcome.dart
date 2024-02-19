@@ -1,6 +1,7 @@
 import 'package:lualimastuff_uas/screens/login.dart';
 import 'package:flutter/material.dart';
 import 'package:lualimastuff_uas/screens/regist.dart';
+import 'package:lualimastuff_uas/widget/login_load.dart';
 
 class WelcomeScreen extends StatefulWidget {
   const WelcomeScreen({super.key});
@@ -75,7 +76,7 @@ class _WelcomeScreenState extends State<WelcomeScreen>
                   child: InkWell(
                     onTap: () => Navigator.of(context).push(
                       MaterialPageRoute(
-                        builder: (context) => LoginScreen(),
+                        builder: (context) => HomePage(),
                       ),
                     ),
                     child: Container(
