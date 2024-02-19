@@ -1,8 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:lualimastuff_uas/screens/home.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:lualimastuff_uas/bloc/login_bloc.dart';
 
-class LoginScreen extends StatelessWidget {
-  LoginScreen({Key? key}) : super(key: key);
+class LoginScreen extends StatefulWidget {
+  @override
+  State<LoginScreen> createState() => _LoginScreenState();
+}
+
+class _LoginScreenState extends State<LoginScreen> {
+  TextEditingController _usernameController = TextEditingController(text: "");
+  TextEditingController _passwordController = TextEditingController(text: "");
 
   @override
   Widget build(BuildContext context) {
@@ -45,32 +52,37 @@ class LoginScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   TextField(
+                    controller: _usernameController,
                     decoration: InputDecoration(
-                        suffixIcon: Icon(
-                          Icons.check,
-                          color: Colors.grey,
+                      suffixIcon: Icon(
+                        Icons.check,
+                        color: Colors.grey,
+                      ),
+                      label: Text(
+                        'Username',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Color.fromARGB(255, 133, 15, 176),
                         ),
-                        label: Text(
-                          'Gmail',
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            color: Color.fromARGB(255, 133, 15, 176),
-                          ),
-                        )),
+                      ),
+                    ),
                   ),
                   TextField(
+                    controller: _passwordController,
                     decoration: InputDecoration(
-                        suffixIcon: Icon(
-                          Icons.visibility_off,
-                          color: Colors.grey,
+                      suffixIcon: Icon(
+                        Icons.visibility_off,
+                        color: Colors.grey,
+                      ),
+                      label: Text(
+                        'Password',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Color.fromARGB(255, 133, 15, 176),
                         ),
-                        label: Text(
-                          'Password',
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            color: Color.fromARGB(255, 133, 15, 176),
-                          ),
-                        )),
+                      ),
+                    ),
+                    obscureText: true,
                   ),
                   SizedBox(
                     height: 20,
@@ -91,10 +103,12 @@ class LoginScreen extends StatelessWidget {
                   ),
                   GestureDetector(
                     onTap: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const HomeScreen()));
+                      final username = _usernameController.text;
+                      final password = _passwordController.text;
+
+                      // Dispatch login event to Bloc
+                      context.read<LoginBloc>().add(
+                          ProsesLogin(username: username, password: password));
                     },
                     child: Container(
                       height: 55,
@@ -118,7 +132,7 @@ class LoginScreen extends StatelessWidget {
                     ),
                   ),
                   SizedBox(
-                    height: 150,
+                    height: 120,
                   ),
                   Align(
                     alignment: Alignment.bottomRight,

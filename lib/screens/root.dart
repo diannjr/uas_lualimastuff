@@ -17,7 +17,6 @@ class _ProjectRootState extends State<ProjectRoot> {
   List screens = [
     const HomeScreen(),
     const LikesScreen(),
-    ProfileScreen(),
   ];
 
   @override
