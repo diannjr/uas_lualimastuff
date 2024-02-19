@@ -17,6 +17,9 @@ class _ProjectRootState extends State<ProjectRoot> {
   List screens = [
     const HomeScreen(),
     const LikesScreen(),
+    ProfileScreen(
+      sessionToken: '',
+    ),
   ];
 
   @override
@@ -86,3 +89,5 @@ class _ProjectRootState extends State<ProjectRoot> {
     );
   }
 }
+
+mixin state {}

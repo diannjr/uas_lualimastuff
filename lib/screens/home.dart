@@ -3,6 +3,7 @@ import 'package:lualimastuff_uas/modal/product.dart';
 import 'package:lualimastuff_uas/screens/details.dart';
 import 'package:lualimastuff_uas/widget/categories.dart';
 import 'package:lualimastuff_uas/widget/product_card.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {

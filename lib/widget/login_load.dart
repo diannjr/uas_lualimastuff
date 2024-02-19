@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:lualimastuff_uas/screens/home.dart';
 import 'package:lualimastuff_uas/screens/login.dart';
 import 'package:lualimastuff_uas/screens/profile.dart';
 import 'package:lualimastuff_uas/widget/error.dart';
